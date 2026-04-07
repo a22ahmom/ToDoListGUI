@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            checkedListBox1 = new CheckedListBox();
+            clbTasks = new CheckedListBox();
             lblTitle = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flpElements = new FlowLayoutPanel();
             txtTaskInput = new TextBox();
             btnAdd = new Button();
             btnRemove = new Button();
             btnChange = new Button();
-            flowLayoutPanel1.SuspendLayout();
+            flpElements.SuspendLayout();
             SuspendLayout();
             // 
-            // checkedListBox1
+            // clbTasks
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(21, 222);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(753, 202);
-            checkedListBox1.TabIndex = 7;
+            clbTasks.FormattingEnabled = true;
+            clbTasks.Location = new Point(21, 222);
+            clbTasks.Name = "clbTasks";
+            clbTasks.Size = new Size(753, 202);
+            clbTasks.TabIndex = 7;
             // 
             // lblTitle
             // 
@@ -55,16 +55,16 @@
             lblTitle.TabIndex = 8;
             lblTitle.Text = "My To-Do List";
             // 
-            // flowLayoutPanel1
+            // flpElements
             // 
-            flowLayoutPanel1.Controls.Add(txtTaskInput);
-            flowLayoutPanel1.Controls.Add(btnAdd);
-            flowLayoutPanel1.Controls.Add(btnRemove);
-            flowLayoutPanel1.Controls.Add(btnChange);
-            flowLayoutPanel1.Location = new Point(21, 77);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(753, 88);
-            flowLayoutPanel1.TabIndex = 9;
+            flpElements.Controls.Add(txtTaskInput);
+            flpElements.Controls.Add(btnAdd);
+            flpElements.Controls.Add(btnRemove);
+            flpElements.Controls.Add(btnChange);
+            flpElements.Location = new Point(21, 77);
+            flpElements.Name = "flpElements";
+            flpElements.Size = new Size(753, 88);
+            flpElements.TabIndex = 9;
             // 
             // txtTaskInput
             // 
@@ -105,20 +105,20 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(flpElements);
             Controls.Add(lblTitle);
-            Controls.Add(checkedListBox1);
+            Controls.Add(clbTasks);
             Name = "Form1";
             Text = "Form1";
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
+            flpElements.ResumeLayout(false);
+            flpElements.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private CheckedListBox checkedListBox1;
+        private CheckedListBox clbTasks;
         private Label lblTitle;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flpElements;
         private TextBox txtTaskInput;
         private Button btnAdd;
         private Button btnRemove;
