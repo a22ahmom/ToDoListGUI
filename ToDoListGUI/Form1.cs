@@ -11,6 +11,7 @@ namespace ToDoListGUI
         public void InitializeGUI()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
         }
     }
 }
