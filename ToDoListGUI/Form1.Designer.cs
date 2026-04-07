@@ -33,8 +33,8 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             txtTaskInput = new TextBox();
             btnAdd = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnRemove = new Button();
+            btnChange = new Button();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,8 +59,8 @@
             // 
             flowLayoutPanel1.Controls.Add(txtTaskInput);
             flowLayoutPanel1.Controls.Add(btnAdd);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(btnRemove);
+            flowLayoutPanel1.Controls.Add(btnChange);
             flowLayoutPanel1.Location = new Point(21, 77);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(753, 88);
@@ -79,26 +79,26 @@
             btnAdd.Name = "button1";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 1;
-            btnAdd.Text = "button1";
+            btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRemove
             // 
-            button2.Location = new Point(234, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnRemove.Location = new Point(234, 3);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(94, 29);
+            btnRemove.TabIndex = 2;
+            btnRemove.Text = "Remove";
+            btnRemove.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnChange
             // 
-            button3.Location = new Point(334, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnChange.Location = new Point(334, 3);
+            btnChange.Name = "btnChange";
+            btnChange.Size = new Size(94, 29);
+            btnChange.TabIndex = 3;
+            btnChange.Text = "Change";
+            btnChange.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -121,7 +121,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private TextBox txtTaskInput;
         private Button btnAdd;
-        private Button button2;
-        private Button button3;
+        private Button btnRemove;
+        private Button btnChange;
     }
 }
