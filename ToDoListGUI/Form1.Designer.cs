@@ -70,13 +70,15 @@
             // 
             txtTaskInput.Location = new Point(3, 3);
             txtTaskInput.Name = "txtTaskInput";
-            txtTaskInput.Size = new Size(125, 27);
+            txtTaskInput.Size = new Size(325, 27);
+            txtTaskInput.Margin = new Padding(50, 30, 3, 3);
             txtTaskInput.TabIndex = 0;
             // 
-            // button1
+            // btnAdd
             // 
-            btnAdd.Location = new Point(134, 3);
-            btnAdd.Name = "button1";
+            btnAdd.Location = new Point(141, 3);
+            btnAdd.Margin = new Padding(10, 30, 3, 3);
+            btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
@@ -84,7 +86,8 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(234, 3);
+            btnRemove.Location = new Point(241, 3);
+            btnRemove.Margin = new Padding(10, 30, 3, 3);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(94, 29);
             btnRemove.TabIndex = 2;
@@ -93,7 +96,8 @@
             // 
             // btnChange
             // 
-            btnChange.Location = new Point(334, 3);
+            btnChange.Location = new Point(341, 3);
+            btnChange.Margin = new Padding(10, 30, 3, 3);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(94, 29);
             btnChange.TabIndex = 3;

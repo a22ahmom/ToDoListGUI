@@ -5,6 +5,12 @@ namespace ToDoListGUI
         public Form1()
         {
             InitializeComponent();
+            InitializeGUI();
+        }
+
+        public void InitializeGUI()
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
