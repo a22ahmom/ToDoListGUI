@@ -75,13 +75,21 @@ namespace ToDoListGUI
             }
         }
 
+        private void lstDisplayTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = clbTasks.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                Task selectedTask = taskManager.GetTask(selectedIndex);
+                txtTaskInput.Text = selectedTask.Description;
+            }
+        }
+
         private Task ReadTaskInfo()
         {
             Task task = new Task();
 
-            task.Description = txtTaskInput.Text;
-            //task.IsCompleted = chkIsCompleted.Checked;
-            //task.IsCompleted = clbTasks.GetItemChecked(clbTasks.SelectedIndex);
+            task.Description = txtTaskInput.Text;     
 
             return task;
         }

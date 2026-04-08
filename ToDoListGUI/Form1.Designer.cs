@@ -46,6 +46,7 @@
             clbTasks.Size = new Size(753, 202);
             clbTasks.TabIndex = 7;
             clbTasks.CheckOnClick = false;
+            clbTasks.SelectedIndexChanged += lstDisplayTasks_SelectedIndexChanged;
             // 
             // lblTitle
             // 
