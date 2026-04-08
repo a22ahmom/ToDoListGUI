@@ -38,5 +38,10 @@ namespace ToDoListGUI
                 description = value;
             }
         }
+
+        public override string ToString()
+        {
+            return $"{description}";
+        }
     }
 }

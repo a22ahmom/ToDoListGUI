@@ -45,6 +45,7 @@
             clbTasks.Name = "clbTasks";
             clbTasks.Size = new Size(753, 202);
             clbTasks.TabIndex = 7;
+            clbTasks.CheckOnClick = true;
             // 
             // lblTitle
             // 
@@ -83,6 +84,7 @@
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnRemove
             // 

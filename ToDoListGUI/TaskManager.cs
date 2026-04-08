@@ -6,43 +6,55 @@ namespace ToDoListGUI
 {
     class TaskManager
     {
-        private Task[] tasks = new Task[10];
+        private Task[] listOfTasks = new Task[10];
         private int numOfTasks = 0;
 
         public TaskManager() { }
 
-        public int GetNumTasks() 
-        { 
-            return numOfTasks; 
+        public int NumOfTasks
+        {
+            get 
+            { 
+                return numOfTasks; 
+            }
         }
 
         public Task GetTask(int index) 
         { 
-            return tasks[index];
+            return listOfTasks[index];
         }
 
-        public void AddTask(Task task)
+        public bool AddTask(Task task)
         {
-            bool canAddTask = task != null && numOfTasks < tasks.Length;
+            bool checkTask = (task != null) && (numOfTasks < listOfTasks.Length);
 
-            if (canAddTask)
+            if (checkTask)
             {
-                tasks[numOfTasks] = task;
+                listOfTasks[numOfTasks] = task;
                 numOfTasks++;
-            }
-        }
-
-        public bool CheckTask(int index)
-        {
-            bool validIndex = index >= 0 && index < numOfTasks;
-            if (validIndex)
-            {
                 return true;
             }
             else
             {
+                MessageBox.Show("Cannot add task. Task is null or task list is full.");
                 return false;
             }
+        }
+
+        public bool CheckTaskIndex(int index)
+        {
+            bool validIndex = index >= 0 && index < listOfTasks.Length;
+            return validIndex;
+        }
+
+        public string[] GetInfoStrings()
+        {
+            string[] infoStrings = new string[numOfTasks];
+            for (int i = 0; i < numOfTasks; i++)
+            {
+                infoStrings[i] = listOfTasks[i].ToString();
+            }
+            return infoStrings;
         }
     }
 }
