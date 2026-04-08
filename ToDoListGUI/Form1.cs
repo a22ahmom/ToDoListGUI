@@ -51,6 +51,30 @@ namespace ToDoListGUI
             }
         }
 
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = clbTasks.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                Task task = ReadTaskInfo();
+
+                if (task != null)
+                {
+                    bool success = taskManager.ChangeTask(selectedIndex, task);
+                    if (success)
+                    {
+                        UpdateGUI();
+                        clbTasks.SelectedIndex = selectedIndex;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a task to change.");
+            }
+        }
+
         private Task ReadTaskInfo()
         {
             Task task = new Task();

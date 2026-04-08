@@ -73,6 +73,22 @@ namespace ToDoListGUI
             }
         }
 
+        public bool ChangeTask(int index, Task newTask)
+        {
+            bool checkTask = (newTask != null) && CheckTaskIndex(index);
+
+            if (checkTask)
+            {
+                listOfTasks[index] = newTask;
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Cannot change task. Task is null or invalid index.");
+                return false;
+            }
+        }
+
         public bool CheckTaskIndex(int index)
         {
             bool validIndex = index >= 0 && index < listOfTasks.Length;

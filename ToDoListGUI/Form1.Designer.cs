@@ -45,7 +45,7 @@
             clbTasks.Name = "clbTasks";
             clbTasks.Size = new Size(753, 202);
             clbTasks.TabIndex = 7;
-            clbTasks.CheckOnClick = true;
+            clbTasks.CheckOnClick = false;
             // 
             // lblTitle
             // 
@@ -106,6 +106,7 @@
             btnChange.TabIndex = 3;
             btnChange.Text = "Change";
             btnChange.UseVisualStyleBackColor = true;
+            btnChange.Click += btnChange_Click;
             // 
             // Form1
             // 
