@@ -30,8 +30,25 @@ namespace ToDoListGUI
                     UpdateGUI();
                     clbTasks.SelectedIndex = taskManager.NumOfTasks - 1;
                 }
+            }            
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = clbTasks.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                bool success = taskManager.RemoveTask(selectedIndex);
+                if (success)
+                {
+                    UpdateGUI();
+                    clbTasks.SelectedIndex = taskManager.NumOfTasks - 1;
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Please select a task to remove.");
+            }
         }
 
         private Task ReadTaskInfo()
@@ -54,7 +71,6 @@ namespace ToDoListGUI
             if (infoStrings != null)
             {
                 clbTasks.Items.AddRange(infoStrings);
-
             }
         }
     }

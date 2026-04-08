@@ -95,6 +95,7 @@
             btnRemove.TabIndex = 2;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // btnChange
             // 

@@ -41,6 +41,38 @@ namespace ToDoListGUI
             }
         }
 
+        public bool RemoveTask(int index)
+        {
+            if (CheckTaskIndex(index))
+            {
+                listOfTasks[index] = null;
+                numOfTasks--;
+                ShiftElementsOneStepToLeft(index);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Cannot remove task. Invalid index.");
+                return false;
+            }
+        }
+
+        public void ShiftElementsOneStepToLeft(int index)
+        {
+            for (int i = index + 1; i < listOfTasks.Length; i++)
+            {
+                if (listOfTasks[i] != null)
+                {
+                    listOfTasks[i - 1] = listOfTasks[i];
+                    listOfTasks[i] = null;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
         public bool CheckTaskIndex(int index)
         {
             bool validIndex = index >= 0 && index < listOfTasks.Length;
