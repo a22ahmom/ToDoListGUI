@@ -38,12 +38,11 @@ namespace ToDoListGUI
             int selectedIndex = clbTasks.SelectedIndex;
             if (selectedIndex != -1)
             {
-                bool success = taskManager.RemoveTask(selectedIndex);
-                if (success)
-                {
-                    UpdateGUI();
-                    clbTasks.SelectedIndex = taskManager.NumOfTasks - 1;
-                }
+                taskManager.RemoveTask(selectedIndex);
+                UpdateGUI();
+
+                if ((selectedIndex - 1) >= 0)
+                    clbTasks.SelectedIndex = Math.Max(0, selectedIndex - 1);
             }
             else
             {
@@ -78,18 +77,27 @@ namespace ToDoListGUI
         private void lstDisplayTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = clbTasks.SelectedIndex;
+
             if (selectedIndex != -1)
             {
                 Task selectedTask = taskManager.GetTask(selectedIndex);
-                txtTaskInput.Text = selectedTask.Description;
+
+                if (selectedTask != null)
+                    txtTaskInput.Text = selectedTask.Description;
             }
+        }
+
+        private void checkedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+
+            
         }
 
         private Task ReadTaskInfo()
         {
             Task task = new Task();
 
-            task.Description = txtTaskInput.Text;     
+            task.Description = txtTaskInput.Text;
 
             return task;
         }
@@ -103,7 +111,7 @@ namespace ToDoListGUI
             if (infoStrings != null)
             {
                 clbTasks.Items.AddRange(infoStrings);
-            }
+            }            
         }
     }
 }

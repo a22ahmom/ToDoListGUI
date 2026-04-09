@@ -35,6 +35,7 @@
             btnAdd = new Button();
             btnRemove = new Button();
             btnChange = new Button();
+            lstCompletedTasks = new ListBox();
             flpElements.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,9 +44,9 @@
             clbTasks.FormattingEnabled = true;
             clbTasks.Location = new Point(21, 222);
             clbTasks.Name = "clbTasks";
-            clbTasks.Size = new Size(753, 202);
+            clbTasks.Size = new Size(376, 202);
             clbTasks.TabIndex = 7;
-            clbTasks.CheckOnClick = false;
+            clbTasks.ItemCheck += checkedListBox_ItemCheck;
             clbTasks.SelectedIndexChanged += lstDisplayTasks_SelectedIndexChanged;
             // 
             // lblTitle
@@ -70,15 +71,15 @@
             // 
             // txtTaskInput
             // 
-            txtTaskInput.Location = new Point(3, 3);
+            txtTaskInput.Location = new Point(50, 30);
+            txtTaskInput.Margin = new Padding(50, 30, 3, 3);
             txtTaskInput.Name = "txtTaskInput";
             txtTaskInput.Size = new Size(325, 27);
-            txtTaskInput.Margin = new Padding(50, 30, 3, 3);
             txtTaskInput.TabIndex = 0;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(141, 3);
+            btnAdd.Location = new Point(388, 30);
             btnAdd.Margin = new Padding(10, 30, 3, 3);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
@@ -89,7 +90,7 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(241, 3);
+            btnRemove.Location = new Point(495, 30);
             btnRemove.Margin = new Padding(10, 30, 3, 3);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(94, 29);
@@ -100,7 +101,7 @@
             // 
             // btnChange
             // 
-            btnChange.Location = new Point(341, 3);
+            btnChange.Location = new Point(602, 30);
             btnChange.Margin = new Padding(10, 30, 3, 3);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(94, 29);
@@ -108,6 +109,14 @@
             btnChange.Text = "Change";
             btnChange.UseVisualStyleBackColor = true;
             btnChange.Click += btnChange_Click;
+            // 
+            // lstCompletedTasks
+            // 
+            lstCompletedTasks.Location = new Point(410, 222);
+            lstCompletedTasks.Name = "lstCompletedTasks";
+            lstCompletedTasks.Size = new Size(367, 204);
+            lstCompletedTasks.TabIndex = 10;
+            lstCompletedTasks.FormattingEnabled = true;
             // 
             // Form1
             // 
@@ -117,6 +126,7 @@
             Controls.Add(flpElements);
             Controls.Add(lblTitle);
             Controls.Add(clbTasks);
+            Controls.Add(lstCompletedTasks);
             Name = "Form1";
             Text = "Form1";
             flpElements.ResumeLayout(false);
@@ -132,5 +142,6 @@
         private Button btnAdd;
         private Button btnRemove;
         private Button btnChange;
+        private ListBox lstCompletedTasks;
     }
 }
