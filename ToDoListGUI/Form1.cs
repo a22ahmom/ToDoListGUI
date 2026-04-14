@@ -23,14 +23,14 @@ namespace ToDoListGUI
 
             if (task != null)
             {
-                bool success = taskManager.AddTask(task);
+                bool success = taskManager.AddTask(task);                
                 
                 if (success)
-                {
+                {                    
                     UpdateGUI();
-                    clbTasks.SelectedIndex = taskManager.NumOfTasks - 1;
+                    clbTasks.SelectedIndex = taskManager.NumOfTasks - 1;                    
                 }
-            }            
+            } 
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -41,8 +41,25 @@ namespace ToDoListGUI
                 taskManager.RemoveTask(selectedIndex);
                 UpdateGUI();
 
+                //lstCompletedTasks.Items.RemoveAt(selectedIndex);
+
+                // Remove items from bottom up
                 if ((selectedIndex - 1) >= 0)
+                {
                     clbTasks.SelectedIndex = Math.Max(0, selectedIndex - 1);
+                }
+
+                // Select nothing if the list is empty
+                else if(clbTasks.Items.Count == 0)
+                {
+                    clbTasks.SelectedIndex = -1;
+                }
+
+                // Remove items from top down
+                else
+                {
+                    clbTasks.SelectedIndex = 0;
+                }                
             }
             else
             {
@@ -89,8 +106,15 @@ namespace ToDoListGUI
 
         private void checkedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            if (e.NewValue == CheckState.Checked)
+            {
+                lstCompletedTasks.Items.Add(clbTasks.Items[e.Index]);                                
+            }
 
-            
+            if (e.NewValue == CheckState.Unchecked)
+            {
+                lstCompletedTasks.Items.Remove(clbTasks.Items[e.Index]);
+            }
         }
 
         private Task ReadTaskInfo()
