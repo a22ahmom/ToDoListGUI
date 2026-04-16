@@ -36,6 +36,8 @@
             btnRemove = new Button();
             btnChange = new Button();
             lstCompletedTasks = new ListBox();
+            lblCompleteTasks = new Label();
+            lblAllTasks = new Label();
             flpElements.SuspendLayout();
             SuspendLayout();
             // 
@@ -112,17 +114,37 @@
             // 
             // lstCompletedTasks
             // 
+            lstCompletedTasks.FormattingEnabled = true;
             lstCompletedTasks.Location = new Point(410, 222);
             lstCompletedTasks.Name = "lstCompletedTasks";
             lstCompletedTasks.Size = new Size(367, 204);
             lstCompletedTasks.TabIndex = 10;
-            lstCompletedTasks.FormattingEnabled = true;
+            // 
+            // lblCompleteTasks
+            // 
+            lblCompleteTasks.AutoSize = true;
+            lblCompleteTasks.Location = new Point(516, 199);
+            lblCompleteTasks.Name = "lblCompleteTasks";
+            lblCompleteTasks.Size = new Size(120, 20);
+            lblCompleteTasks.TabIndex = 11;
+            lblCompleteTasks.Text = "Completed Tasks";
+            // 
+            // lblAllTasks
+            // 
+            lblAllTasks.AutoSize = true;
+            lblAllTasks.Location = new Point(177, 199);
+            lblAllTasks.Name = "lblAllTasks";
+            lblAllTasks.Size = new Size(64, 20);
+            lblAllTasks.TabIndex = 12;
+            lblAllTasks.Text = "All Tasks";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblAllTasks);
+            Controls.Add(lblCompleteTasks);
             Controls.Add(flpElements);
             Controls.Add(lblTitle);
             Controls.Add(clbTasks);
@@ -132,6 +154,7 @@
             flpElements.ResumeLayout(false);
             flpElements.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -143,5 +166,7 @@
         private Button btnRemove;
         private Button btnChange;
         private ListBox lstCompletedTasks;
+        private Label lblCompleteTasks;
+        private Label lblAllTasks;
     }
 }
